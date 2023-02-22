@@ -1,20 +1,27 @@
-import { describe, it } from 'vitest';
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
+/* eslint-disable no-undef */
 import { render, screen } from '@testing-library/react';
+import { describe, it } from 'vitest';
 
 import { MemoryRouter } from 'react-router-dom';
-import { WrappedApp, App } from './App';
+import { App, WrappedApp } from './App';
+import MainPage from './pages/MainPage/MainPage';
 
 describe('App', () => {
   it('Renders Skyrim poll', () => {
     render(<WrappedApp />);
 
-    // eslint-disable-next-line no-undef
     expect(
       screen.getByRole('heading', {
         level: 1,
       })
-    ).toHaveTextContent('Skyrim poll');
+    ).toHaveTextContent(
+      'Hi! Take the test to find out what kind of Kajit you are.'
+    );
+  });
+  it('button renders with correct text', () => {
+    render(<MainPage />);
+    expect(screen.getByRole('button')).toHaveTextContent('Take the test');
   });
   it('Renders not found in valid path', () => {
     render(
@@ -23,7 +30,6 @@ describe('App', () => {
       </MemoryRouter>
     );
 
-    // eslint-disable-next-line no-undef
     expect(
       screen.getByRole('heading', {
         level: 1,

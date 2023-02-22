@@ -1,13 +1,15 @@
 import { HashRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
-import Home from './pages/Home';
+import MainPage from './pages/MainPage/MainPage';
 import NotFound from './pages/NotFound';
+
+import './assets/styles/global.less';
+import './assets/styles/reset.less';
 
 export function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<MainPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </div>
