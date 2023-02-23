@@ -1,4 +1,4 @@
-import { HashRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import MainPage from './pages/MainPage/MainPage';
 import NotFound from './pages/NotFound';
 
@@ -7,19 +7,17 @@ import './assets/styles/reset.less';
 
 export function App() {
   return (
-    <div>
-      <Routes>
-        <Route path="/" element={<MainPage />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+    <Routes>
+      <Route path="/" element={<MainPage />} />
+      <Route path="*" element={<NotFound />} />
+    </Routes>
   );
 }
 
 export function WrappedApp() {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <App />
-    </HashRouter>
+    </BrowserRouter>
   );
 }
