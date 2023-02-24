@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import threeCat from '../../assets/images/three_cat.png';
 import styles from './MainPage.module.less';
 
@@ -14,7 +15,9 @@ function MainPage() {
           <img className={styles.content_img} src={threeCat} alt="three cats" />
         </div>
         <footer className={styles.footer}>
-          <button className={styles.btn}>Take the test</button>
+          <button className={styles.btn}>
+            <Link to="/poll">Take the test</Link>
+          </button>
         </footer>
       </div>
     </div>
