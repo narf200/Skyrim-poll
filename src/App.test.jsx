@@ -6,9 +6,10 @@ import { describe, it } from 'vitest';
 import { MemoryRouter } from 'react-router-dom';
 import { App, WrappedApp } from './App';
 import MainPage from './pages/MainPage/MainPage';
+import PollPage from './pages/PollPage/PollPage';
 
 describe('App', () => {
-  it('Renders Skyrim poll', () => {
+  it('Renders Main page', () => {
     render(<WrappedApp />);
 
     expect(
@@ -22,6 +23,11 @@ describe('App', () => {
   it('button renders with correct text', () => {
     render(<MainPage />);
     expect(screen.getByRole('button')).toHaveTextContent('Take the test');
+  });
+  it('Renders Poll page', () => {
+    render(<PollPage />);
+    expect(screen.getByRole('button')).toHaveTextContent('yes');
+    expect(screen.getByRole('button')).toHaveTextContent('no');
   });
   it('Renders not found in valid path', () => {
     render(

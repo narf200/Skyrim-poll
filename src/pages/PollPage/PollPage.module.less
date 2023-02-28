@@ -27,7 +27,7 @@
   letter-spacing: -0.5px;
   font-size: 4.6rem;
   line-height: 1.05;
-  padding-top: 1.8rem;
+  padding: 1.8rem;
   margin-bottom: 2.6rem;
 }
 
@@ -44,7 +44,7 @@
   align-items: center;
   flex-direction: column;
   margin-bottom: 3.2rem;
-  width: 50vw;
+  width: 60vw;
   background-color: rgba(50, 52, 78, 0.8);
   border-radius: 9px;
   gap: 1rem;
@@ -79,6 +79,12 @@
 
 button:hover {
   background-color: rgba(102, 82, 10, 0.79);
+}
+
+button:disabled {
+  background-color: rgb(25, 20, 3);
+  color: rgba(25, 20, 3, 0.79);
+  cursor: not-allowed;
 }
 
 .btn_result {
