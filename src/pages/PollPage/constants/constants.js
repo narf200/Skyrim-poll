@@ -1,9 +1,4 @@
-export const ASSASIN = 'ASSASIN';
-export const WIZARD = 'WIZARD';
-export const SELLER = 'SELLER';
-export const CATFUNNY = 'CATFUNNY';
-
-export const questions = [
+const questions = [
   {
     id: 1,
     text: 'Do you like septims?',
@@ -22,7 +17,7 @@ export const questions = [
   },
   {
     id: 5,
-    text: 'Do you hear the clink of coins from afar?',
+    text: 'Do you hear the clink of coins from a far?',
   },
   {
     id: 6,
@@ -46,10 +41,12 @@ export const questions = [
   },
   {
     id: 11,
-    text: 'The best means of transportation on the rocks is a horse?',
+    text: 'Is a horse the best vehicle for moving around the mountains ?',
   },
   {
     id: 12,
     text: "Have you ever absorbed a dragon's soul?",
   },
 ];
+
+export default questions;

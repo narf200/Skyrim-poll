@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import Button from './components/Button';
-import { questions } from './constants/constants';
-import getCalculationCharacter from './helpers/helpers';
+import Modal from './components/Modal';
+import questions from './constants/constants';
 import styles from './PollPage.module.less';
 
 function PollPage() {
   const [answerCounter, setAnswerCounter] = useState(0);
-  // const [isModalShow, setIsModalShow] = useState(false);
+  const [isModalShow, setIsModalShow] = useState(false);
 
   const handleIncrase = () => {
     setAnswerCounter((prevAnswerCounter) => {
@@ -19,9 +19,14 @@ function PollPage() {
     });
   };
 
-  const hsndleShowModal = () => {
-    getCalculationCharacter(answerCounter);
-    // setIsModalShow(true);
+  const handleShowModal = () => {
+    setIsModalShow(true);
+  };
+
+  const handleResetCounter = () => {
+    setAnswerCounter((prevAnswerCounter) => {
+      return prevAnswerCounter - prevAnswerCounter;
+    });
   };
 
   return (
@@ -44,9 +49,15 @@ function PollPage() {
           </div>
         ))}
       </div>
-      <button onClick={hsndleShowModal} className={styles.btn_result}>
+      <button onClick={handleShowModal} className={styles.btn_result}>
         find out the result
       </button>
+      {isModalShow && (
+        <Modal
+          handleResetCounter={handleResetCounter}
+          answerCounter={answerCounter}
+        />
+      )}
     </div>
   );
 }
