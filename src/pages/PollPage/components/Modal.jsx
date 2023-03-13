@@ -7,8 +7,6 @@ import styles from './Modal.module.less';
 export default function Modal({ answerCounter, handleResetCounter }) {
   const { name, url } = getCalculationCharacter(answerCounter);
 
-  console.log(name, url);
-
   return (
     <div className={styles.modal_backdrop}>
       <div className={styles.modal}>
