@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Button from './components/Button';
 import Modal from './components/Modal';
-import questions from './constants/constants';
+import { questions } from './constants/constants';
 import styles from './PollPage.module.less';
 
 function PollPage() {
