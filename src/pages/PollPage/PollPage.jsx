@@ -29,6 +29,8 @@ function PollPage() {
     });
   };
 
+  console.log(answerCounter);
+
   return (
     <div className={styles.container}>
       <h1 className={styles.heading_primary}>

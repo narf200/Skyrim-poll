@@ -7,14 +7,20 @@ import styles from './Modal.module.less';
 export default function Modal({ answerCounter, handleResetCounter }) {
   const { name, url } = getCalculationCharacter(answerCounter);
 
+  console.log(name, url);
+
   return (
     <div className={styles.modal_backdrop}>
       <div className={styles.modal}>
-        <h1 className={styles.heading_primary}>You are a {name}</h1>
-        <img className={styles.character_image} src={url} alt={name} />
-        <button onClick={handleResetCounter} className={styles.btn_result}>
-          <Link to="/">Take the test again</Link>
-        </button>
+        {url && (
+          <>
+            <h1 className={styles.heading_primary}>You are a {name}</h1>
+            <img className={styles.character_image} src={url} alt={name} />
+            <button onClick={handleResetCounter} className={styles.btn_result}>
+              <Link to="/">Take the test again</Link>
+            </button>
+          </>
+        )}
       </div>
     </div>
   );
