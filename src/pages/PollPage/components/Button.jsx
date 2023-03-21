@@ -11,7 +11,12 @@ function Button({ handler, children }) {
   };
 
   return (
-    <button disabled={isActive} onClick={handleClck} className={styles.btn}>
+    <button
+      className={styles.btn}
+      data-testid={children === 'yes' ? `yes-button` : `no-button`}
+      disabled={isActive}
+      onClick={handleClck}
+    >
       {children}
     </button>
   );

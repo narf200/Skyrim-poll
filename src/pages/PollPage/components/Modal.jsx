@@ -8,7 +8,7 @@ export default function Modal({ answerCounter, handleResetCounter }) {
   const { name, url } = getCalculationCharacter(answerCounter);
 
   return (
-    <div className={styles.modal_backdrop}>
+    <div className={styles.modal_backdrop} data-testid="modal">
       <div className={styles.modal}>
         {url && (
           <>

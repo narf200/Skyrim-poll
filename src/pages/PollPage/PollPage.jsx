@@ -39,17 +39,21 @@ function PollPage() {
           <div className={styles.poll_item} key={id}>
             <h2 className={styles.heading_secondary}>{text}</h2>
             <div className={styles.actions}>
-              <Button handler={handleIncrase} className={styles.btn}>
+              <Button className={styles.btn} handler={handleIncrase}>
                 yes
               </Button>
-              <Button handler={handleDecrease} className={styles.btn}>
+              <Button className={styles.btn} handler={handleDecrease}>
                 no
               </Button>
             </div>
           </div>
         ))}
       </div>
-      <button onClick={handleShowModal} className={styles.btn_result}>
+      <button
+        className={styles.btn_result}
+        data-testid="close-modal"
+        onClick={handleShowModal}
+      >
         find out the result
       </button>
       {isModalShow && (

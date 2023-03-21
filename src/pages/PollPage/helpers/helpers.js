@@ -2,9 +2,9 @@ import {
   ASSASIN,
   BARD,
   BLACK_MAMBA,
-  SELLER,
-  PAWNBROKER,
   HUNTER,
+  PAWNBROKER,
+  SELLER,
   WIZARD,
 } from '../constants/constants';
 
@@ -25,7 +25,7 @@ const getCalculationCharacter = (counter) => {
       name: 'Hunter',
       url: HUNTER,
     };
-  } else if (counter >= -1 && counter >= -3) {
+  } else if (counter <= -1 && counter >= -3) {
     character = {
       name: 'Pawnbroker',
       url: PAWNBROKER,
